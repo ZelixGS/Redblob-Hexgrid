@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3t02yohs06h4"]
+
+[ext_resource type="Script" path="res://HexGrid/Nodes/Hex3D/Hex3D.gd" id="1_ujnwd"]
+[ext_resource type="CylinderMesh" uid="uid://dw0g562268efy" path="res://HexGrid/Nodes/Models/HexMesh.tres" id="2_ssife"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_uwrrl"]
+points = PackedVector3Array(0.866025, 0.5, 0.5, 0, 0.5, 1, 0.866025, -0.5, 0.5, 0.866025, 0.5, -0.500196, 0, -0.5, 1, -0.866025, 0.5, 0.499804, 0.866025, -0.5, -0.500196, 0, 0.5, -1, -0.866025, -0.5, 0.499804, -0.866025, 0.5, -0.5, 0, -0.5, -1, -0.866025, -0.5, -0.5)
+
+[node name="Hex3D" type="Node3D"]
+script = ExtResource("1_ujnwd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_ssife")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_uwrrl")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+billboard = 1
+text = "(X:%s, Y:%s)"
+font_size = 48
+outline_size = 22
