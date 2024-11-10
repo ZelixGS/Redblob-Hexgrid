@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dp01kxdl0itqg"
-path="res://.godot/imported/BlenderHex.glb-8481dbe21339acf73b21502d45cca1d8.scn"
+uid="uid://0d13d4x575s0"
+path="res://.godot/imported/BlenderHex2.glb-cd98abc90b328d08cfed00e38cca4b20.scn"
 
 [deps]
 
-source_file="res://HexGrid/Nodes/Models/BlenderHex.glb"
-dest_files=["res://.godot/imported/BlenderHex.glb-8481dbe21339acf73b21502d45cca1d8.scn"]
+source_file="res://HexGrid/Nodes/3D/Models/BlenderHex2.glb"
+dest_files=["res://.godot/imported/BlenderHex2.glb-cd98abc90b328d08cfed00e38cca4b20.scn"]
 
 [params]
 

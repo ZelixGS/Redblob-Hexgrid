@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3t02yohs06h4"]
+
+[ext_resource type="Script" path="res://HexGrid/Nodes/3D/Hex3D/Hex3D.gd" id="1_ujnwd"]
+[ext_resource type="ArrayMesh" uid="uid://dxx7nensq5sqh" path="res://HexGrid/Nodes/3D/Models/HexMesh3.tres" id="2_p1fhw"]
+[ext_resource type="Material" uid="uid://bd7u0i6oo162s" path="res://HexGrid/Nodes/3D/Models/HexMaterial.tres" id="4_ehkoo"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_826p0"]
+points = PackedVector3Array(-0.000169575, 0.399371, 1, 0.866025, 0.399371, 0.499804, 0.765486, 0.5, 0.441856, -0.000169575, 0.5, 0.883908, -0.765656, 0.5, 0.441856, -0.866025, 0.399371, 0.499804, -0.000169575, -1.50006, 1, 0.866025, -1.50006, 0.499804, 0.866025, 0.399371, -0.500196, 0.765486, 0.5, -0.442052, -0.765656, 0.5, -0.442052, -0.866025, 0.399371, -0.500196, -0.866025, -1.50006, 0.499804, 0.866025, -1.50006, -0.500196, -0.000169575, 0.399371, -1, -0.000169575, 0.5, -0.884103, -0.866025, -1.50006, -0.500196, -0.000169575, -1.50006, -1)
+
+[node name="Hex3D" type="Node3D"]
+script = ExtResource("1_ujnwd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_p1fhw")
+surface_material_override/0 = ExtResource("4_ehkoo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_826p0")

@@ -24,4 +24,5 @@ shape = SubResource("ConvexPolygonShape3D_8ih6f")
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, 0)
+visible = false
 text = "(0, 0, 0)"

@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://kc1byjno0gxh"]
+
+[ext_resource type="PackedScene" uid="uid://svbt8u240qku" path="res://Scene/Interface/DebugConsole/DebugConsole.tscn" id="1_tah6w"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Main" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DebugConsole" parent="Main" instance=ExtResource("1_tah6w")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
