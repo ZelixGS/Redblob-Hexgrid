@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3t02yohs06h4"]
+[gd_scene load_steps=6 format=3 uid="uid://c3t02yohs06h4"]
 
 [ext_resource type="Script" path="res://HexGrid/Nodes/Hex3D/Hex3D.gd" id="1_ujnwd"]
-[ext_resource type="CylinderMesh" uid="uid://dw0g562268efy" path="res://HexGrid/Nodes/Models/HexMesh.tres" id="2_ssife"]
+[ext_resource type="PackedScene" uid="uid://dp01kxdl0itqg" path="res://HexGrid/Nodes/Models/BlenderHex.glb" id="2_tilcc"]
+[ext_resource type="ArrayMesh" uid="uid://2th7xgcj1uhj" path="res://HexGrid/Nodes/Models/HexMesh2.tres" id="3_ef3uy"]
+[ext_resource type="Material" uid="uid://bd7u0i6oo162s" path="res://HexGrid/Nodes/Models/HexMaterial.tres" id="4_ehkoo"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_uwrrl"]
 points = PackedVector3Array(0.866025, 0.5, 0.5, 0, 0.5, 1, 0.866025, -0.5, 0.5, 0.866025, 0.5, -0.500196, 0, -0.5, 1, -0.866025, 0.5, 0.499804, 0.866025, -0.5, -0.500196, 0, 0.5, -1, -0.866025, -0.5, 0.499804, -0.866025, 0.5, -0.5, 0, -0.5, -1, -0.866025, -0.5, -0.5)
@@ -9,8 +11,12 @@ points = PackedVector3Array(0.866025, 0.5, 0.5, 0, 0.5, 1, 0.866025, -0.5, 0.5, 
 [node name="Hex3D" type="Node3D"]
 script = ExtResource("1_ujnwd")
 
+[node name="BlenderHex" parent="." instance=ExtResource("2_tilcc")]
+visible = false
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = ExtResource("2_ssife")
+mesh = ExtResource("3_ef3uy")
+surface_material_override/0 = ExtResource("4_ehkoo")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 

@@ -1,3 +1,4 @@
+@tool
 class_name HexGrid3D extends Node3D
 
 const HEX3D: PackedScene = preload("res://HexGrid/Nodes/Hex3D/Hex3D.tscn")
@@ -14,7 +15,8 @@ var hexes: Dictionary = {}
 var selected: Array[Hex3D] = []
 
 func _ready() -> void:
-	setup()
+	if not Engine.is_editor_hint():
+		setup()
 
 func setup() -> void:
 	grid = HexGrid.new(size)
@@ -42,7 +44,7 @@ func add_meshes() -> void:
 		new_mesh.col = hex.q
 		new_mesh.row = hex.r
 		new_mesh.update_label()
-		await get_tree().create_timer(0.01).timeout
+		#await get_tree().create_timer(0.01).timeout
 
 #endregion
 

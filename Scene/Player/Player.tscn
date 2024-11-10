@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqpachmcmhvrj"]
+
+[ext_resource type="Script" path="res://Scene/Player/Player.gd" id="1_0peo6"]
+
+[node name="Player" type="Node3D"]
+script = ExtResource("1_0peo6")
+
+[node name="Gimbal" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Gimbal"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 7.5, 7.5)
